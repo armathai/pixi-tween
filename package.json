@@ -1,0 +1,61 @@
+{
+    "name": "@armathai/pixi-tween",
+    "version": "1.0.0",
+    "description": "Particle emitter for Pixi.js",
+    "main": "bin/pixi-tween.js",
+    "types": "bin/pixi-tween.d.ts",
+    "scripts": {
+        "test": "jest --config jestconfig.json",
+        "start": "npx parcel src/__examples__/index.html",
+        "build-examples": "npx parcel build src/__examples__/index.html --public-url ./ --no-minify",
+        "make:dts": "node scripts/make_dts.js",
+        "uglify": "node scripts/uglify.js",
+        "build": "tsc && npm run make:dts && npm run uglify",
+        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+        "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,ts}'  --fix",
+        "prepare": "npm run build --scripts-prepend-node-path",
+        "prepublishOnly": "npm test && npm run lint"
+    },
+    "repository": {
+        "url": "git@github.com:armathai/pixi-tween.git"
+    },
+    "keywords": [
+        "pixijs5",
+        "pixijs",
+        "pixi.js",
+        "pixi",
+        "tweenmanager",
+        "animation",
+        "tween"
+    ],
+    "author": "armathai LLC",
+    "license": "MIT",
+    "homepage": "https://github.com/armathai/pixi-tween#readme",
+    "peerDependencies": {
+        "pixi.js": ">=5.0.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^26.0.8",
+        "@types/node": "^14.0.27",
+        "@typescript-eslint/eslint-plugin": "^3.7.1",
+        "@typescript-eslint/parser": "^3.7.1",
+        "eslint": "^7.5.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.3",
+        "jest": "^26.2.1",
+        "line-reader": "^0.4.0",
+        "parcel-bundler": "^1.12.4",
+        "pixi.js": "^5.3.2",
+        "prettier": "^2.0.5",
+        "ts-jest": "^26.1.4",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^3.9.7",
+        "uglify-js": "^3.9.3"
+    },
+    "files": [
+        "bin/**/*"
+    ],
+    "dependencies": {
+        "gsap": "^3.4.2"
+    }
+}
