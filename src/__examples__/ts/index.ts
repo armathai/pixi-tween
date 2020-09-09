@@ -35,8 +35,7 @@ class Game extends PIXI.Application {
             yoyo: true,
             repeat: 1,
         });
-
-        // PIXI.tween.to(graphics, { pixi: { scaleY: 0.8 }, duration: dur * 0.001, delay: dur * 0.37 });
+        PIXI.tween.to(graphics, { pixi: { scaleY: 0.8 }, duration: dur * 0.001, delay: dur * 0.37 });
     }
 }
 

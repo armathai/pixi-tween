@@ -10,7 +10,7 @@
         "build-examples": "npx parcel build src/__examples__/index.html --public-url ./ --no-minify",
         "make:dts": "node scripts/make_dts.js",
         "uglify": "node scripts/uglify.js",
-        "build": "tsc && npm run make:dts && npm run uglify",
+        "build": "webpack --config ./webpack/webpack.js && tsc && npm run make:dts && npm run uglify",
         "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
         "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,ts}'  --fix",
         "prepare": "npm run build --scripts-prepend-node-path",
@@ -39,6 +39,7 @@
         "@types/node": "^14.0.27",
         "@typescript-eslint/eslint-plugin": "^3.7.1",
         "@typescript-eslint/parser": "^3.7.1",
+        "clean-webpack-plugin": "^3.0.0",
         "eslint": "^7.5.0",
         "eslint-config-prettier": "^6.11.0",
         "eslint-plugin-prettier": "^3.1.3",
@@ -50,7 +51,9 @@
         "ts-jest": "^26.1.4",
         "tslint-config-prettier": "^1.18.0",
         "typescript": "^3.9.7",
-        "uglify-js": "^3.9.3"
+        "uglify-js": "^3.9.3",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
     },
     "files": [
         "bin/**/*"

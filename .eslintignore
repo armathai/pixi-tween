@@ -5,3 +5,5 @@ bin/*
 dist/*
 typings/*
 src/__test__/*
+webpack/*
+libs/*

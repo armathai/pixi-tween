@@ -12,7 +12,7 @@
         "allowJs": true
     },
     "include": ["src/**/*.ts", "src/*.ts"],
-    "files": ["node_modules/gsap/dist/gsap.min.js", "node_modules/gsap/dist/PixiPlugin.min.js"],
+    "files": ["libs/tween.js"],
     "exclude": [
         "node_modules/**/*",
         "bin/*",
