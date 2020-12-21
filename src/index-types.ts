@@ -59,11 +59,5 @@ type Tween = typeof gsap & {
 };
 
 namespace pixitween {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    export const tween: Tween = window.pixi_tween;
-}
-
-namespace pixitween {
-    PIXI['tween'] = pixitween.tween;
+    export const tween: Tween = null;
 }

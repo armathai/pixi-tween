@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
     Back,
     Bounce,
@@ -24,8 +23,9 @@ import { PixiPlugin } from 'gsap/src/PixiPlugin';
 
 gsap.registerPlugin(PixiPlugin);
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-window.pixi_tween = {
+PIXI['tween'] = {
     ...gsap,
     easeBackIn: Back.easeIn,
     easeBackOut: Back.easeOut,
