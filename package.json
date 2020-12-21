@@ -1,6 +1,6 @@
 {
     "name": "@armathai/pixi-tween",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Pixi Tween",
     "main": "dist/pixi-tween.cjs.js",
     "module": "dist/pixi-tween.esm.js",
