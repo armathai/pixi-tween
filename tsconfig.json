@@ -1,23 +1,10 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "AMD",
-        "outFile": "bin/pixi-tween.js",
-        "sourceMap": true,
+        "outDir": "dist/types",
         "preserveConstEnums": true,
-        "removeComments": true,
-        "inlineSources": true,
         "declaration": true,
-        "skipLibCheck": true,
-        "allowJs": true
+        "emitDeclarationOnly": true
     },
-    "include": ["src/**/*.ts", "src/*.ts"],
-    "files": ["libs/tween.js"],
-    "exclude": [
-        "node_modules/**/*",
-        "bin/*",
-        "src/__examples__/ts/**/*.ts",
-        "src/__test__/**/*.ts",
-        "src/__test__/*.ts"
-    ]
+    "files": ["src/index-types.ts"]
 }

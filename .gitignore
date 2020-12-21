@@ -7,8 +7,6 @@
 *.o
 *.so
 lib
-libs
-bin
 dist/*
 !dist/assets
 
@@ -50,4 +48,3 @@ build/*
 ##########
 .idea/
 .cache
-

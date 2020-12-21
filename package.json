@@ -1,18 +1,17 @@
 {
     "name": "@armathai/pixi-tween",
-    "version": "1.1.0",
-    "description": "Particle emitter for Pixi.js",
-    "main": "bin/pixi-tween.js",
-    "types": "bin/pixi-tween.d.ts",
+    "version": "2.0.0",
+    "description": "Pixi Tween",
+    "main": "dist/pixi-tween.cjs.js",
+    "module": "dist/pixi-tween.esm.js",
+    "browser": "dist/pixi-tween.umd.js",
+    "types": "dist/types/index-types.d.ts",
     "scripts": {
-        "test": "jest --config jestconfig.json",
-        "start": "npx parcel src/__examples__/index.html",
-        "build-examples": "npx parcel build src/__examples__/index.html --public-url ./ --no-minify",
         "make:dts": "node scripts/make_dts.js",
-        "uglify": "node scripts/uglify.js",
-        "build": "webpack --config ./webpack/webpack.js && tsc && npm run make:dts && npm run uglify",
-        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-        "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,ts}'  --fix",
+        "build": "rollup -c && tsc && npm run make:dts",
+        "dev": "rollup -c -w",
+        "test": "jest --config jestconfig.json",
+        "lint": "tsc && eslint '*/**/*.{js,ts,ts}' --fix",
         "prepare": "npm run build --scripts-prepend-node-path",
         "prepublishOnly": "npm test && npm run lint"
     },
@@ -28,37 +27,36 @@
         "animation",
         "tween"
     ],
-    "author": "armathai LLC",
+    "author": "Armath LLC",
     "license": "MIT",
     "homepage": "https://github.com/armathai/pixi-tween#readme",
-    "peerDependencies": {
-        "pixi.js": ">=5.0.0"
-    },
     "devDependencies": {
-        "@types/jest": "^26.0.13",
-        "@types/node": "^14.6.4",
-        "@typescript-eslint/eslint-plugin": "^3.10.1",
-        "@typescript-eslint/parser": "^3.10.1",
-        "clean-webpack-plugin": "^3.0.0",
+        "@babel/plugin-proposal-class-properties": "^7.12.1",
+        "@babel/preset-typescript": "^7.12.7",
+        "@rollup/plugin-babel": "^5.2.2",
+        "@rollup/plugin-commonjs": "^17.0.0",
+        "@rollup/plugin-node-resolve": "^11.0.1",
+        "@types/jest": "^26.0.19",
+        "@types/node": "^14.14.14",
+        "@typescript-eslint/eslint-plugin": "^4.10.0",
+        "@typescript-eslint/parser": "^4.10.0",
         "eslint": "^7.8.1",
-        "eslint-config-prettier": "^6.11.0",
+        "eslint-config-prettier": "^7.1.0",
         "eslint-plugin-prettier": "^3.1.3",
-        "jest": "^26.4.2",
-        "line-reader": "^0.4.0",
+        "jest": "^26.6.3",
         "parcel-bundler": "^1.12.4",
-        "pixi.js": "^5.3.3",
-        "prettier": "^2.1.1",
-        "ts-jest": "^26.3.0",
-        "tslint-config-prettier": "^1.18.0",
-        "typescript": "^3.9.7",
-        "uglify-js": "^3.10.4",
-        "webpack": "^4.44.1",
-        "webpack-cli": "^3.3.12"
+        "pixi.js": "^5.3.5",
+        "prettier": "^2.2.1",
+        "rollup": "^2.35.1",
+        "rollup-plugin-terser": "^7.0.2",
+        "ts-jest": "^26.4.4",
+        "typescript": "^4.1.3"
     },
     "files": [
-        "bin/**/*"
+        "dist/**/*"
     ],
     "dependencies": {
+        "core-js": "^3.8.1",
         "gsap": "^3.5.1"
     }
 }
